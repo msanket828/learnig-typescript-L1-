@@ -99,5 +99,43 @@ const professorsData = {
     age: 47,
     qualification: "BE Computer Science",
 };
-professorsData.name = "Akshay Kachare";
+//professorsData.name = "Akshay Kachare";
 console.log(professorsData);
+const patient = {
+    name: 'sanket',
+    age: 27,
+    illness: 'Dengue'
+};
+console.log(patient);
+/* --------------------------------- classes -------------------------------- */
+//1.1 ts normal class
+class Person {
+    constructor(actualName, actualAge) {
+        this.name = actualName;
+        this.age = actualAge;
+    }
+}
+let person1 = new Person('sanket', 27);
+console.log(person1.name);
+console.log(person1);
+let person2 = new Person('aditya', 24);
+console.log(person2);
+class Student {
+    constructor(studentName, studentAge, studentStd, studentXIIPerc) {
+        this.name = studentName;
+        this.age = studentAge;
+        this.std = studentStd;
+        this.XIIPerc = studentXIIPerc;
+    }
+    getStudentDetails() {
+        return `Hi i am ${this.name}, am ${this.age} years old, i was just passed ${this.std} standard with ${this.XIIPerc}% marks `;
+    }
+}
+//instance one
+let student1 = new Student('sanket', 18, '12th', 62);
+console.log(student1);
+console.log(student1.getStudentDetails());
+//instance two
+let student2 = new Student('aditya', 16, '10th', 91);
+console.log(student2);
+console.log(student2.getStudentDetails());

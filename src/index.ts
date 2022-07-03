@@ -145,6 +145,84 @@ const professorsData: profressorInterface = {
   qualification: "BE Computer Science",
 };
 
-professorsData.name = "Akshay Kachare";
+//professorsData.name = "Akshay Kachare";
 
 console.log(professorsData);
+
+
+//1.2 interface 
+// property? means optional interface value
+interface patientInterface {
+  name: string,
+  age: number,
+  illness: string
+  dateCheckIn?: string
+}
+
+const patient: patientInterface={
+  name: 'sanket',
+  age: 27,
+  illness: 'Dengue'
+}
+
+console.log(patient);
+
+
+
+/* --------------------------------- classes -------------------------------- */
+
+//1.1 ts normal class
+
+class Person {
+  name: string
+  age: number
+
+  constructor(actualName:string,actualAge:number) {
+    this.name=actualName;
+    this.age=actualAge;
+  }
+  
+}
+
+let person1=new Person('sanket',27);
+console.log(person1.name);
+console.log(person1);
+let person2=new Person('aditya',24);
+console.log(person2);
+
+
+//1.2 classes with interface
+
+interface StudentInterface {
+  name:string,
+  age:number,
+  std:string,
+  XIIPerc:number
+}
+
+class Student implements StudentInterface {
+  name:string
+  age:number
+  std: string
+  XIIPerc: number
+
+  constructor(studentName:string,studentAge:number,studentStd:string,studentXIIPerc:number) {
+    this.name=studentName;
+    this.age=studentAge;
+    this.std=studentStd;
+    this.XIIPerc=studentXIIPerc;
+  }
+
+  getStudentDetails(){
+    return `Hi i am ${this.name}, am ${this.age} years old, i was just passed ${this.std} standard with ${this.XIIPerc}% marks `;
+  }
+}
+
+//instance one
+let student1=new Student('sanket',18,'12th',62);
+console.log(student1);
+console.log(student1.getStudentDetails());
+//instance two
+let student2=new Student('aditya',16,'10th',91);
+console.log(student2);
+console.log(student2.getStudentDetails());
